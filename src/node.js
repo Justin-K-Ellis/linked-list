@@ -1,6 +1,5 @@
 class Node {
-  constructor(address = null, value = null, nextNode = null) {
-    this.address = address;
+  constructor(value = null, nextNode = null) {
     this.value = value;
     this.nextNode = nextNode;
   }

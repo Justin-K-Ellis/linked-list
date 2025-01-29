@@ -1,16 +1,24 @@
 import Node from "./node.js";
 
 class LinkedList {
-  constructor(head) {
-    this.head = new Node(1);
+  nodes = [];
+
+  constructor() {
+    this.head = new Node();
+    this.nodes.push(this.head);
+  }
+
+  append(value) {
+    const newNode = new Node(value, null);
+    const lastNode = this.nodes[this.nodes.length - 1];
+    lastNode.nextNode = newNode;
   }
 
   displayHead() {
-    for (let [key, value] of Object.entries(this.head)) {
-      console.log(`${key}: ${value}`);
-    }
+    console.log(this.head);
   }
 }
 
 const list = new LinkedList();
-console.log(list.head.nextNode);
+list.append("cat");
+list.displayHead();
